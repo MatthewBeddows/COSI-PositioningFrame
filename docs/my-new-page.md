@@ -214,12 +214,3 @@ Please find below the documentation to assemble the mechanical components of COS
 - Attach [Aluminum plate 3]{Qty: 1} to the left corner and [Aluminum plate 4]{Qty: 1} to the right corner using [M8x20 countersunk screws]{Qty: 10}.
 
 
-## Install the linear bearings and rails {pagestep}
-
-**Insert Slot Nuts into Top Frames:**
-
-- Insert [Slot nuts, M5]{Qty: 24} on the top two (x-axis) 40x80 frames. (2 frames × 2 rails × 6 slot nuts per rail = 24 slot nuts)
-
-![Inserting slot nuts on the top frames for the rails](images/Figure19.png)  
-*Figure 19: Inserting slot nuts on the top frames for the rails.*
-
