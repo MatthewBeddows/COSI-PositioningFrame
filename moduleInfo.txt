@@ -1,0 +1,7 @@
+[Module Name] COSI- Positioning Frame
+
+[Module Info] Positioning Frame for the COSI system.
+
+[Requirements]
+[Module Address] https://github.com/MatthewBeddows/COSI-Plate
+
