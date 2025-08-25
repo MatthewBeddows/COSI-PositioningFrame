@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Untitled project</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../static/Logo/favicon.ico" />
+<link rel="icon" type="image/png" href="../static/Logo/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="../static/Logo/favicon-16x16.png" sizes="16x16" />
+
+    <link href="../static/base-style.css" rel="stylesheet">
+    <link href="../static/site-style.css" rel="stylesheet">
+                    
+        <script type="text/javascript" src="../static/search.js" defer=""></script>
+    </head>
+<body>
+<header class="site-header">
+    <div class="wrapper header-wrapper" >
+        <div class=header-text>
+   
+    <h1 class="site-title">Untitled project</h1>
+</div>
+            </div>
+</header>
+<div class="page-content">
+            <div>
+            <nav class="sidebar">
+                <a href="#" class="menu-icon">
+                <svg viewBox="0 0 18 15">
+                    <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                    <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                    <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                </svg>
+                </a>
+                <ul class="nav-list">
+                <li>
+    <a class="navhome" href="../">
+        Untitled project
+    </a>
+</li>
+<li id="nav-search" :class="focused && searchTerm.length > 0 ? 'search-result-popout' : 'search'" v-scope v-on:vue:mounted="mounted('../')">
+  <input
+    type="text"
+    placeholder="Search..."
+    v-on:input="search($event.target.value)"
+    v-on:keypress="handleKeyPress"
+    v-on:keyup.esc="$event.target.blur()"
+    v-on:focus="handleFocus"
+    v-on:blur="handleBlur"
+    :value="searchTerm" />
+    <div class="search-results" v-if="focused && searchTerm.length > 0">
+        <div v-if="searchResults.length > 0">Results:</div>
+        <div v-if="searchResults.length === 0">No results.</div>
+        <template v-for="(result, index) in searchResults">
+            <li>
+                <a class="search-result" :href="`../${result.path}.html`">
+               <span v-for="crumb in result.breadCrumbs.slice(0, -1)">
+                ${crumb + ' > '}
+                </span>
+               ${result.title || result.breadCrumbs[result.breadCrumbs.length - 1]}
+                <p>
+                    <span v-for="node in result.highlightChars" :class="node.mark ? 'highlight' : ''" >${node.chars}</span>
+                </p>
+                </a>
+            </li>
+        </template>
+    </div>
+</li>
+<li class="active">
+    <a class="active" href="../docs/index.html">
+        COSI Mechanical System
+    </a>
+        <ul class="sub-nav-list">
+                <li>
+            <a class="not-active" href="../docs/index_BOM.html">
+                Bill of Materials
+            </a>
+        </li>
+                <li>
+            <a class="active" href="../docs/my-new-page.html">
+                COSI-Measure v1.0
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step1.html">
+                {{BOM}}
+
+
+##  ...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step2.html">
+                ## Connect the...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step3.html">
+                ## Prepare for...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step4.html">
+                ## Attach the ...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step5.html">
+                ##  Add the fi...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step6.html">
+                ## Attach alum...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step7.html">
+                ## Install the...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step8.html">
+                ## Attach the ...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step9.html">
+                ## Install the...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step10.html">
+                ##  Connect th...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step11.html">
+                ## Install the...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step12.html">
+                ## Complete th...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step13.html">
+                ## Final z-axi...
+            </a>
+        </li>
+                <li>
+            <a class="not-active" href="../docs/Step14.html">
+                ## Attach the ...
+            </a>
+        </li>
+            </ul>
+    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="wrapper">
+    <h1 id="cosi-measure-v10">COSI-Measure v1.0</h1>
+<h2 id="mechanical-assembly">Mechanical Assembly</h2>
+<h3 id="revision-history">Revision History</h3>
+<table>
+<thead>
+<tr>
+<th>Rev.</th>
+<th>Date (YYYY-MM-DD)</th>
+<th>Description of Change</th>
+<th>Author/Contributors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2017-08-29</td>
+<td>Initial version</td>
+<td>Haopeng Han, Lukas Winter</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>2018-08-24</td>
+<td>Revised version</td>
+<td>Lukas Winter</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notes">Notes</h3>
+<p>Please find below the documentation to assemble the mechanical components of COSI Measure, a 3D multipurpose measurement system [1]. If you find any flaws or have any questions/suggestions regarding this document or project, please let us know at lukas.winter@ptb.de. Improving the quality of this work and its documentation makes it easier for others to reproduce and build upon this work.</p>
+<p>Documentation published describing Hardware is licensed under the CERN OHL v.1.2. You may redistribute and modify this documentation under the terms of the CERN OHL v.1.2. (http://ohwr.org/cernohl) unless otherwise stated.</p>
+<p>This documentation is distributed <strong>WITHOUT ANY EXPRESS OR IMPLIED WARRANTY</strong>, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN OHL v.1.2 for applicable conditions.</p>
+<p>If you find COSI Measure useful in your work, please cite this paper:</p>
+<p>[1] Han H, Moritz R, Oberacker E, Waiczies H, Niendorf T, and Winter L, "Open Source 3D Multipurpose Measurement System with Submillimetre Fidelity and First Application in Magnetic Resonance," <em>Scientific Reports</em>, 7:13452, 2017.</p>
+<h3 id="required-tools">Required Tools:</h3>
+<ul>
+<li>Socket screw keys for M5, M6, M8</li>
+</ul>
+<div class="pagebom">
+<h3 id="parts">Parts</h3>
+<ul>
+<li>5 <a Class="bom" href="Parts/AluminumFrame_40x40x800.html">Aluminum frame (40x40x800)mm³</a> </li>
+<li>10 <a Class="bom" href="Parts/AluminumFrame_40x80x800.html">Aluminum frame (40x80x800)mm³</a> </li>
+<li>2 <a Class="bom" href="Parts/AluminumFrame_40x80x880.html">Aluminum frame (40x80x880)mm³</a> </li>
+<li>5 <a Class="bom" href="Parts/AluminumPlate_1.html">Aluminum plate 1</a> </li>
+<li>2 <a Class="bom" href="Parts/AluminumPlate_2.html">Aluminum plate 2</a> </li>
+<li>2 <a Class="bom" href="Parts/AluminumPlate_3.html">Aluminum plate 3</a> </li>
+<li>2 <a Class="bom" href="Parts/AluminumPlate_4.html">Aluminum plate 4</a> </li>
+<li>3 <a Class="bom" href="Parts/AluminumPlate_5.html">Aluminum plate 5</a> </li>
+<li>3 <a Class="bom" href="Parts/AluminumPlate_6.html">Aluminum plate 6</a> </li>
+<li>1 <a Class="bom" href="Parts/AluminumPlate_7.html">Aluminum plate 7</a> </li>
+<li>2 <a Class="bom" href="Parts/AluminumPlates_8_9.html">Aluminum plates 8 &amp; 9</a> </li>
+<li>12 <a Class="bom" href="Parts/Angle_40.html">Angles, 40</a> </li>
+<li>12 <a Class="bom" href="Parts/Angle_40x80.html">Angles, 40x80</a> </li>
+<li>2 <a Class="bom" href="Parts/BallscrewSpindleNutBlock_SFU1605_DM_652mm.html">Ballscrew &amp; spindle nut block</a> </li>
+<li>5 <a Class="bom" href="Parts/DistancePlate1mm_TBR20UU.html">Distance plate 1mm</a> </li>
+<li>2 <a Class="bom" href="Parts/EasyMechatronics.html">Easy-Mechatronics System</a> </li>
+<li>2 <a Class="bom" href="Parts/FloatingBearing_LLB20_6200.html">Floating bearing</a> </li>
+<li>12 <a Class="bom" href="Parts/HexagonNut_M5.html">Hexagon nuts, M5</a> </li>
+<li>16 <a Class="bom" href="Parts/LinearBearing_TBR20UU.html">Linear bearing, TBR20UU</a> </li>
+<li>12 <a Class="bom" href="Parts/M5x20CountersunkScrew.html">M5x20 countersunk screws</a> </li>
+<li>24 <a Class="bom" href="Parts/M5x20Screw.html">M5x20 screws</a> </li>
+<li>24 <a Class="bom" href="Parts/M5x30Screw.html">M5x30 screws</a> </li>
+<li>2 <a Class="bom" href="Parts/HexagonNut_M6.html">M6 screw nuts</a> </li>
+<li>32 <a Class="bom" href="Parts/M6x20CountersunkScrew.html">M6x20 countersunk screws</a> </li>
+<li>18 <a Class="bom" href="Parts/M6x20Screw.html">M6x20 screws</a> </li>
+<li>2 <a Class="bom" href="Parts/M6x30Screw.html">M6x30 screws</a> </li>
+<li>24 <a Class="bom" href="Parts/M8x18CountersunkScrew.html">M8x18 countersunk screws</a> </li>
+<li>64 <a Class="bom" href="Parts/M8x18Screw.html">M8x18 screws</a> </li>
+<li>10 <a Class="bom" href="Parts/M8x20CountersunkScrew.html">M8x20 countersunk screws</a> </li>
+<li>2 <a Class="bom" href="Parts/MotorCoupler_D25L30_8_8.html">Motor coupler</a> </li>
+<li>2 <a Class="bom" href="Parts/MotorHolderFixedBearing_FLB20_3200.html">Motor holder and fixed bearing</a> </li>
+<li>24 <a Class="bom" href="Parts/SlotNut_M5.html">Slot nuts, M5</a> </li>
+<li>52 <a Class="bom" href="Parts/SlotNut_M8.html">Slot nuts, M8</a> </li>
+<li>4 <a Class="bom" href="Parts/SupportedRail_TBS20.html">Supported rail, TBS20</a> </li>
+</ul>
+</div>
+<h2 class="page-step" id="assemble-the-aluminum-frames">Step 1: Assemble the aluminum frames</h2>
+<p><strong>Insert Slot Nuts into Frames:</strong></p>
+<ul>
+<li>Take 2 x  <a href="Parts/AluminumFrame_40x80x800.html">Aluminum frame (40x80x800)mm³</a> and insert 4 x <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> at each end of the frames.</li>
+</ul>
+<p><img alt="Inserting slot nuts at each end of the frame" src="images/slotnutsinserted001.png" title="" /><br />
+<em>Figure 3: Inserting slot nuts at each end of the frame.</em></p>
+<ul>
+<li>Add an additional <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> in the perpendicular slot of each frame.</li>
+</ul>
+<p><img alt="Adding an additional slot nut in the perpendicular slot of the frame" src="images/slotnutatbottom001.png" title="" /><br />
+<em>Figure 4: Adding an additional slot nut in the perpendicular slot of the frame.</em></p>
+<p><strong>Attach Angles to Frames:</strong></p>
+<ul>
+<li>Fix the <a href="Parts/Angle_40x80.html">Angles, 40x80</a> to these two aluminum frames using <a href="Parts/M8x18Screw.html">M8x18 screws</a>.</li>
+</ul>
+<p><strong>Prepare Remaining Frames:</strong></p>
+<ul>
+<li>Insert <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> at the top end of each of the remaining four <a href="Parts/AluminumFrame_40x80x800.html">Aluminum frame (40x80x800)mm³</a>.</li>
+</ul>
+<p><img alt="Inserting slot nuts at the top of the remaining frames" src="images/assembledStructureEarly001.png" title="" /><br />
+<em>Figure 5: Inserting slot nuts at the top of the remaining frames.</em></p>
+<p><strong>Assemble the Frame Structure:</strong></p>
+<ul>
+<li>Attach the remaining frames to the angles using <a href="Parts/M8x18Screw.html">M8x18 screws</a>.</li>
+</ul>
+<p><img alt="Frame structure assembled after attaching remaining frames to angles" src="images/Assemblyafterstepone001.png" title="" /><br />
+<em>Figure 6: Frame structure assembled after attaching remaining frames to angles.</em></p>
+<h2 class="page-step" id="connect-the-40x40-aluminum-frames">Step 2: Connect the 40x40 aluminum frames</h2>
+<p><img alt="Step 2 Diagram" src="images/step2.png" title="" /><br />
+<em>Figure 7: Diagram for Step 2.</em></p>
+<p><strong>Insert Slot Nuts into 40x40 Frames:</strong></p>
+<ul>
+<li>Insert <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> on each side of each <a href="Parts/AluminumFrame_40x40x800.html">Aluminum frame (40x40x800)mm³</a>.</li>
+</ul>
+<p><img alt="Inserting slot nuts into the aluminum frame" src="images/insertslotnutseachend.png" title="" /><br />
+<em>Figure 8: Inserting slot nuts into the aluminum frame.</em></p>
+<p><strong>Prepare Vertical Frames:</strong></p>
+<ul>
+<li>Insert a <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> at each corner into the vertical <a href="Parts/AluminumFrame_40x80x800.html">Aluminum frame (40x80x800)mm³</a> from Step 1. (See Figure 7)</li>
+</ul>
+<p><strong>Attach 40x40 Frames to Structure:</strong></p>
+<ul>
+<li>Screw the two <a href="Parts/AluminumFrame_40x40x800.html">Aluminum frame (40x40x800)mm³</a> to the structure using the <a href="Parts/Angle_40.html">Angles, 40</a> and <a href="Parts/M8x18CountersunkScrew.html">M8x18 countersunk screws</a>.</li>
+</ul>
+<p><img alt="Attaching the 40x40 frames to the structure using angles" src="images/Figure9.png" title="" /><br />
+<em>Figure 9: Attaching the 40x40 frames to the structure using angles.</em></p>
+<h2 class="page-step" id="prepare-for-the-top-frame-assembly">Step 3: Prepare for the top frame assembly</h2>
+<p><strong>Insert Slot Nuts into Standing Structure:</strong></p>
+<ul>
+<li>Insert <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> at the top of two frames of the standing structure.</li>
+</ul>
+<p><img alt="Inserting 5 slot nuts at the top of the frame" src="images/Figure10.png" title="" /><br />
+<em>Figure 10: Inserting 5 slot nuts at the top of the frame.</em></p>
+<p><img alt="Slot nuts inserted at the top of the standing structure" src="images/Figure12.png" title="" /><br />
+<em>Figure 12: Slot nuts inserted at the top of the standing structure.</em></p>
+<ul>
+<li>Insert <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> at the top of the remaining two frames.</li>
+</ul>
+<p><img alt="Inserting 4 slot nuts at the top of the frame" src="images/Figure11.png" title="" /><br />
+<em>Figure 11: Inserting 4 slot nuts at the top of the frame.</em></p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>These slot nuts will be used to attach angles later on.</li>
+</ul>
+<h2 class="page-step" id="attach-the-aluminum-frames-to-the-top-of-the-structure">Step 4: Attach the aluminum frames to the top of the structure</h2>
+<p><strong>Insert Slot Nuts into Top Frames:</strong></p>
+<ul>
+<li>Insert <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> at one end and <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> at the other end of each <a href="Parts/AluminumFrame_40x80x880.html">Aluminum frame (40x80x880)mm³</a>.</li>
+</ul>
+<p><strong>Attach Angles to Top Frames:</strong></p>
+<ul>
+<li>Attach the <a href="Parts/Angle_40x80.html">Angles, 40x80</a> to these aluminum frames using <a href="Parts/M8x18Screw.html">M8x18 screws</a>.</li>
+</ul>
+<p><img alt="Attaching angles to the aluminum frames" src="images/Figure13.png" title="" /><br />
+<em>Figure 13: Attaching angles to the aluminum frames.</em></p>
+<p><strong>Assemble Top Frame Structure:</strong></p>
+<ul>
+<li>Position the 880mm aluminum frames on top of the standing structure and connect the angles.</li>
+</ul>
+<p><img alt="Positioning the 880mm frames on top of the structure" src="images/Figure14.png" title="" /><br />
+<em>Figure 14: Positioning the 880mm frames on top of the structure.</em></p>
+<p><img alt="Connecting the angles to the standing structure" src="images/Figure15.png" title="" /><br />
+<em>Figure 15: Connecting the angles to the standing structure.</em></p>
+<ul>
+<li><strong>Note:</strong> There are two slot nuts on the left side (not on right). These will be used in the next step to connect the remaining aluminum frame (40x40).</li>
+</ul>
+<h2 class="page-step" id="add-the-final-aluminum-frame">Step 5: Add the final aluminum frame</h2>
+<p><strong>Insert Slot Nuts into Frame:</strong></p>
+<ul>
+<li>Insert <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> at each end of the <a href="Parts/AluminumFrame_40x40x800.html">Aluminum frame (40x40x800)mm³</a>. (Same as in Step 2)</li>
+</ul>
+<p><strong>Attach Angles and Connect Frame:</strong></p>
+<ul>
+<li>Attach the <a href="Parts/Angle_40.html">Angles, 40</a> to the aluminum frame using <a href="Parts/M8x18CountersunkScrew.html">M8x18 countersunk screws</a>.</li>
+<li>Connect the frame to the existing structure.</li>
+</ul>
+<p><img alt="Connecting the final 40x40 aluminum frame to the structure" src="images/Figure16.png" title="" /><br />
+<em>Figure 16: Connecting the final 40x40 aluminum frame to the structure.</em></p>
+<h2 class="page-step" id="attach-aluminum-plates-to-the-frame">Step 6: Attach aluminum plates to the frame</h2>
+<p><strong>Insert Slot Nuts into Frames:</strong></p>
+<ul>
+<li>Insert <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> into the horizontal (x-axis) aluminum frame on top:</li>
+<li><a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> on the left</li>
+<li><a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> on the right</li>
+<li>Insert <a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> into the vertical (y-axis) aluminum frames:</li>
+<li><a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> on the left</li>
+<li><a href="Parts/SlotNut_M8.html">Slot nuts, M8</a> on the right</li>
+<li><strong>Tip:</strong> You can insert them through the bottom and slide them to the top corner.</li>
+</ul>
+<p><img alt="Inserting slot nuts into the horizontal frame" src="images/Figure17.png" title="" /><br />
+<em>Figure 17: Inserting slot nuts into the horizontal frame.</em></p>
+<p><img alt="Slot nuts inserted into the frames" src="images/Figure18.png" title="" /><br />
+<em>Figure 18: Slot nuts inserted into the frames.</em></p>
+<p><strong>Attach Aluminum Plates:</strong></p>
+<ul>
+<li>Attach <a href="Parts/AluminumPlate_3.html">Aluminum plate 3</a> to the left corner and <a href="Parts/AluminumPlate_4.html">Aluminum plate 4</a> to the right corner using <a href="Parts/M8x20CountersunkScrew.html">M8x20 countersunk screws</a>.</li>
+</ul>
+<h2 class="page-step" id="install-the-linear-bearings-and-rails">Step 7: Install the linear bearings and rails</h2>
+<p><strong>Insert Slot Nuts into Top Frames:</strong></p>
+<ul>
+<li>Insert <a href="Parts/SlotNut_M5.html">Slot nuts, M5</a> on the top two (x-axis) 40x80 frames. (2 frames × 2 rails × 6 slot nuts per rail = 24 slot nuts)</li>
+</ul>
+<p><img alt="Inserting slot nuts on the top frames for the rails" src="images/Figure19.png" title="" /><br />
+<em>Figure 19: Inserting slot nuts on the top frames for the rails.</em></p>
+<p><strong>Attach Supporting Rails:</strong></p>
+<ul>
+<li>Attach the <a href="Parts/SupportedRail_TBS20.html">Supported rail, TBS20</a> to the slot nuts using <a href="Parts/M5x20Screw.html">M5x20 screws</a>.</li>
+<li><strong>Important:</strong> Do not tighten the screws yet.</li>
+</ul>
+<p><strong>Install Linear Bearings:</strong></p>
+<ul>
+<li>Slide the <a href="Parts/LinearBearing_TBR20UU.html">Linear bearing, TBR20UU</a> onto the supporting rails.</li>
+</ul>
+<p><img alt="Sliding linear bearings onto the supporting rails" src="images/Figure20.png" title="" /><br />
+<em>Figure 20: Sliding linear bearings onto the supporting rails.</em></p>
+<h2 class="page-step" id="attach-the-motor-and-spindle-system">Step 8: Attach the motor and spindle system</h2>
+<p><strong>Attach Motor Blocks:</strong></p>
+<ul>
+<li>Attach the <a href="Parts/MotorHolderFixedBearing_FLB20_3200.html">Motor holder and fixed bearing</a> to the <a href="Parts/BallscrewSpindleNutBlock_SFU1605_DM_652mm.html">Ballscrew &amp; spindle nut block</a>.</li>
+</ul>
+<p><img alt="Attaching the motor block to the spindle nut block" src="images/Figure21.png" title="" /><br />
+<em>Figure 21: Attaching the motor block to the spindle nut block.</em></p>
+<p><strong>Assemble Components:</strong></p>
+<ul>
+<li>Assemble all parts with the <a href="Parts/FloatingBearing_LLB20_6200.html">Floating bearing</a> and <a href="Parts/MotorCoupler_D25L30_8_8.html">Motor coupler</a> as shown below.</li>
+</ul>
+<p><img alt="Assembling the ballscrew, bearings, and motor holder" src="images/Figure22.png" title="" /><br />
+<em>Figure 22: Assembling the ballscrew, bearings, and motor holder.</em></p>
+<p><img alt="Completed assembly of motor and spindle system" src="images/Figure23.png" title="" /><br />
+<em>Figure 23: Completed assembly of motor and spindle system.</em></p>
+<h2 class="page-step" id="install-the-easy-mechatronics-system">Step 9: Install the Easy-Mechatronics System</h2>
+<p><strong>Assemble Mechatronics System:</strong></p>
+<ul>
+<li>Attach the <a href="Parts/EasyMechatronics.html">Easy-Mechatronics System</a> (z-axis) to <a href="Parts/AluminumPlates_8_9.html">Aluminum plates 8 &amp; 9</a> using <a href="Parts/M6x20Screw.html">M6x20 screws</a>.</li>
+</ul>
+<p><img alt="Assembled bearings of the Easy-Mechatronics system with aluminum plates 8 &amp; 9" src="images/Figure24.png" title="" /><br />
+<em>Figure 24: Assembled bearings of the Easy-Mechatronics system with aluminum plates 8 &amp; 9.</em></p>
+<ul>
+<li><strong>Note:</strong> The motor holder is attached to plate 8.</li>
+</ul>
+<h2 class="page-step" id="connect-the-linear-axis">Step 10: Connect the linear axis</h2>
+<p><strong>Attach Plate 1 to Linear Bearings:</strong></p>
+<ul>
+<li>Attach <a href="Parts/AluminumPlate_1.html">Aluminum plate 1</a> to the four <a href="Parts/LinearBearing_TBR20UU.html">Linear bearing, TBR20UU</a> from Step 7.</li>
+</ul>
+<p><img alt="Attaching plate 1 to the linear bearings" src="images/Figure25.png" title="" /><br />
+<em>Figure 25: Attaching plate 1 to the linear bearings.</em></p>
+<p><strong>Attach Linear Axes:</strong></p>
+<ul>
+<li>Attach one assembled linear axis (y-axis) to <a href="Parts/AluminumPlate_1.html">Aluminum plate 1</a>.</li>
+</ul>
+<p><strong>Connect Second Linear Axis:</strong></p>
+<ul>
+<li>Attach the second linear axis to <a href="Parts/AluminumPlate_3.html">Aluminum plate 3</a> (using <a href="Parts/M6x20Screw.html">M6x20 screws</a>, floating bearing) and <a href="Parts/AluminumPlate_4.html">Aluminum plate 4</a> (using <a href="Parts/M6x30Screw.html">M6x30 screws</a> and <a href="Parts/HexagonNut_M6.html">M6 screw nuts</a>, motor holder).</li>
+</ul>
+<h2 class="page-step" id="install-the-z-axis-linear-bearings">Step 11: Install the z-axis linear bearings</h2>
+<p><strong>Connect Plates 5 and 6:</strong></p>
+<ul>
+<li>Connect <a href="Parts/AluminumPlate_5.html">Aluminum plate 5</a> with <a href="Parts/AluminumPlate_6.html">Aluminum plate 6</a> using <a href="Parts/M5x30Screw.html">M5x30 screws</a>.</li>
+</ul>
+<p><strong>Connect Plates 6 and 7:</strong></p>
+<ul>
+<li>Connect <a href="Parts/AluminumPlate_6.html">Aluminum plate 6</a> with <a href="Parts/AluminumPlate_7.html">Aluminum plate 7</a> using <a href="Parts/M5x30Screw.html">M5x30 screws</a>.</li>
+</ul>
+<p><img alt="Assembled plates 5, 6, and 7" src="images/Figure27.png" title="" /><br />
+<em>Figure 27: Assembled plates 5, 6, and 7.</em></p>
+<p><strong>Attach Plates to Linear Bearings:</strong></p>
+<ul>
+<li>Attach plates 5, 6, and 7 to the linear bearings from the <a href="Parts/EasyMechatronics.html">Easy-Mechatronics System</a> (z-axis) using <a href="Parts/M6x20CountersunkScrew.html">M6x20 countersunk screws</a>.</li>
+<li><strong>Note:</strong> Ensure that the linear bearings are positioned as in <img alt="Assembled bearings of the Easy-Mechatronics system with aluminum plates 8 &amp; 9" src="images/Figure24.png" title="" /> (pointing away from plates 8 &amp; 9). <a href="Parts/AluminumPlate_5.html">Aluminum plate 5</a> should point towards the motor holding block.</li>
+</ul>
+<p><img alt="Attaching plates 5, 6, and 7 to the linear bearings" src="images/Figure28.png" title="" /><br />
+<em>Figure 28: Attaching plates 5, 6, and 7 to the linear bearings.</em></p>
+<p><strong>Fix Plate 6 to Ballscrew Block:</strong></p>
+<ul>
+<li>Fix <a href="Parts/AluminumPlate_6.html">Aluminum plate 6</a> to the ballscrew block using <a href="Parts/M5x20CountersunkScrew.html">M5x20 countersunk screws</a>.</li>
+</ul>
+<h2 class="page-step" id="complete-the-assembly-by-attaching-supporting-rails">Step 12: Complete the assembly by attaching supporting rails</h2>
+<p><strong>Install Linear Bearings on Rails:</strong></p>
+<ul>
+<li>Slide <a href="Parts/LinearBearing_TBR20UU.html">Linear bearing, TBR20UU</a> onto the <a href="Parts/SupportedRail_TBS20.html">Supported rail, TBS20</a> (2 bearings on top, 2 on bottom).</li>
+</ul>
+<p><strong>Attach Rails to Plate 1:</strong></p>
+<ul>
+<li>Place one supporting rail on top of <a href="Parts/AluminumPlate_1.html">Aluminum plate 1</a> and insert all <a href="Parts/M5x30Screw.html">M5x30 screws</a> through the holes.</li>
+<li>Place the other supporting rail at the bottom of <a href="Parts/AluminumPlate_1.html">Aluminum plate 1</a>, aligning the screws through the holes.</li>
+<li>Fix the rails with the <a href="Parts/HexagonNut_M5.html">Hexagon nuts, M5</a>.</li>
+</ul>
+<p><img alt="Attaching supporting rails to plate 1" src="images/Figure29.png" title="" /><br />
+<em>Figure 29: Attaching supporting rails to plate 1.</em></p>
+<h2 class="page-step" id="final-z-axis-assembly">Step 13: Final z-axis assembly</h2>
+<p><strong>Attach Z-Axis to Bearings:</strong></p>
+<ul>
+<li>Attach the assembled z-axis to the <a href="Parts/LinearBearing_TBR20UU.html">Linear bearing, TBR20UU</a> from Step 12 using <a href="Parts/M6x20CountersunkScrew.html">M6x20 countersunk screws</a>.</li>
+</ul>
+<p><img alt="Attaching the z-axis to the linear bearings" src="images/Figure30.png" title="" /><br />
+<em>Figure 30: Attaching the z-axis to the linear bearings.</em></p>
+<ul>
+<li><strong>Tips:</strong></li>
+<li>You may need to loosen the screws connecting plates 5, 6, and 7 slightly if the fit is too tight. Retighten after assembly.</li>
+<li>Start with the top two bearings, then attach the bottom ones.</li>
+<li>If there is excess space, use <a href="Parts/DistancePlate1mm_TBR20UU.html">Distance plate 1mm</a> between the linear bearings and Aluminum plates 5 and 7.</li>
+</ul>
+<p><img alt="Using distance plates between linear bearings and plates if necessary" src="images/Figure31.png" title="" /><br />
+<em>Figure 31: Using distance plates between linear bearings and plates if necessary.</em></p>
+<p><strong>Fix Plate 5 to Ballscrew Block:</strong></p>
+<ul>
+<li>Fix <a href="Parts/AluminumPlate_5.html">Aluminum plate 5</a> to the ballscrew block of the y-axis using <a href="Parts/M5x20CountersunkScrew.html">M5x20 countersunk screws</a>.</li>
+</ul>
+<p><img alt="Fixing plate 5 to the ballscrew block of the y-axis" src="images/Figure32.png" title="" /><br />
+<em>Figure 32: Fixing plate 5 to the ballscrew block of the y-axis.</em></p>
+<h2 class="page-step" id="attach-the-final-aluminum-plate">Step 14: Attach the final aluminum plate</h2>
+<p><strong>Attach Plate 2 to Plate 1:</strong></p>
+<ul>
+<li>Attach <a href="Parts/AluminumPlate_2.html">Aluminum plate 2</a> to <a href="Parts/AluminumPlate_1.html">Aluminum plate 1</a> using <a href="Parts/M5x30Screw.html">M5x30 screws</a>.</li>
+</ul>
+<p><strong>Fix Plate 2 to Ballscrew Block:</strong></p>
+<ul>
+<li>Attach <a href="Parts/AluminumPlate_2.html">Aluminum plate 2</a> to the ballscrew block from the x-axis using <a href="Parts/M5x20CountersunkScrew.html">M5x20 countersunk screws</a>. Optionally, include a <a href="Parts/DistancePlate1mm_TBR20UU.html">Distance plate 1mm</a> at the ballscrew block.</li>
+</ul>
+<p><img alt="Attaching plate 2 to plate 1 and fixing to the ballscrew block" src="images/Figure33.png" title="" /><br />
+<em>Figure 33: Attaching plate 2 to plate 1 and fixing to the ballscrew block.</em></p>
+<p>The assembled configuration should look like this:</p>
+<p><img alt="Final assembled configuration of COSI Measure" src="images/Figure34.png" title="" /><br />
+<em>Figure 34: Final assembled configuration of COSI Measure.</em></p>
+<h3 id="comments">Comments</h3>
+<p>We are collecting a list of issues and improvements. If you found any errors in the documentation, have ideas/suggestions for improvements, or if you made some modifications, please let us know (you can edit this document with the tracking function and send it to us).</p>
+<h3 id="known-issues">Known Issues</h3>
+<ul>
+<li>The cable chain holder on the z-axis needs some redesign. The current version needs to be manually adjusted.</li>
+</ul>
+<h3 id="improvements">Improvements</h3>
+<ul>
+<li>Limit switch holder files exist in Sketchup only; an adaptation to FreeCAD is desirable.</li>
+<li>The y-axis motor could be rotated 180°, which would make cabling easier later on.</li>
+</ul>
+<!-- GitBuilding Nav -->
+<hr />
+<p><a href="index_BOM.html">Previous page</a> | <a href="Step1.html">Next page</a></p>
+    </div>
+</div>
+<footer class="site-footer">
+    <div class="wrapper">
+        <a target="_blank" rel="noopener noreferrer" href="https://gitbuilding.io">
+    <img class="icon" src="../static/Logo/GitBuilding500x.png" alt="GitBuilding logo">
+    <span class="doc-info">Documentation powered by GitBuilding</span>
+</a>
+
+    </div>
+</footer></body>
+</html>
