@@ -1,0 +1,4 @@
+Risk Name,Risk Code,Risk Level,Risk Description,Risk Mitigation
+Magnetic Projectile,MRI-001,Critical,Metal frame becomes dangerous projectile when exposed to MRI magnetic field causing severe injury or equipment damage,Establish 5-gauss line controls and use physical barriers between frame and MRI suite
+Image Artifacts,MRI-002,High,Metal frame components cause significant artifacts in MRI images compromising test results,Use non-ferromagnetic materials where possible and establish frame positioning guidelines to minimize interference
+Manual Handling Injury,MRI-003,Medium,Risk of musculoskeletal injury during manual handling of heavy metal frame components,Provide mechanical lifting aids and implement proper team lifting techniques training
